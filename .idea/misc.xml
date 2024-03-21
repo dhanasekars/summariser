@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="enabledOnReformat" value="true" />
+    <option name="enabledOnSave" value="true" />
+    <option name="executionMode" value="BINARY" />
+    <option name="pathToExecutable" value="/Library/Frameworks/Python.framework/Versions/3.9/bin/black" />
+    <option name="sdkUUID" value="4e8bd6af-eb1e-4b8f-98d1-f2d89121bcce" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (insurance)" project-jdk-type="Python SDK" />
+</project>
