@@ -8,17 +8,24 @@ from PyPDF2 import PdfReader
 from transformers import BartForConditionalGeneration, BartTokenizer
 from typing import Optional
 from fastapi import UploadFile
+import os
+
+UPLOAD_DIR = "policies"
 
 
 def process_pdf(file: UploadFile) -> Optional[str]:
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
+    file_path = os.path.join(UPLOAD_DIR, file.filename)
+    print(file_path)
+
     # Check if the file is PDF
     if not file.filename.lower().endswith(".pdf"):
         return None
 
-    with open(file.filename, "wb") as buffer:
+    with open(file_path, "wb") as buffer:
         buffer.write(file.file.read())
     # Load PDF and extract text
-    reader = PdfReader(file.filename)
+    reader = PdfReader(file_path)
     num_pages = len(reader.pages)
     policy_text = ""
     for page_number in range(num_pages):
