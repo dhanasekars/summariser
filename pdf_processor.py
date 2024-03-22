@@ -10,7 +10,7 @@ from typing import Optional
 from fastapi import UploadFile
 import os
 
-UPLOAD_DIR = "policies"
+UPLOAD_DIR = "files"
 
 
 def process_pdf(file: UploadFile) -> Optional[str]:
